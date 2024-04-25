@@ -217,12 +217,19 @@ class _FilterPurchaseListWidgetState extends State<FilterPurchaseListWidget> {
                                         ? dateTimeFormat(
                                             'dd/MM/yyyy',
                                             functions.stringToDateTime(
-                                                _model.datePicked1?.toString()))
+                                                _model.datePicked1?.toString()),
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          )
                                         : valueOrDefault<String>(
                                             dateTimeFormat(
-                                                'dd/MM/yyyy',
-                                                functions.stringToDateTime(
-                                                    widget.dateStart)),
+                                              'dd/MM/yyyy',
+                                              functions.stringToDateTime(
+                                                  widget.dateStart),
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'dd/MM/yyyy',
                                           ),
                                     'Khoảng thời gian',
@@ -314,12 +321,19 @@ class _FilterPurchaseListWidgetState extends State<FilterPurchaseListWidget> {
                                         ? dateTimeFormat(
                                             'dd/MM/yyyy',
                                             functions.stringToDateTime(
-                                                _model.datePicked2?.toString()))
+                                                _model.datePicked2?.toString()),
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          )
                                         : valueOrDefault<String>(
                                             dateTimeFormat(
-                                                'dd/MM/yyyy',
-                                                functions.stringToDateTime(
-                                                    widget.dateEnd)),
+                                              'dd/MM/yyyy',
+                                              functions.stringToDateTime(
+                                                  widget.dateEnd),
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'dd/MM/yyyy',
                                           ),
                                     'Khoảng thời gian',
@@ -495,8 +509,17 @@ class _FilterPurchaseListWidgetState extends State<FilterPurchaseListWidget> {
                           onPressed: () async {
                             _model.apiResultFilter =
                                 await PurchaseGroup.purchaseListCall.call(
-                              filter:
-                                  '{\"_and\":[{\"_and\":[{\"agent_id\":{\"_eq\":\"${FFAppState().user.agentId.id}\"}}${widget.searchField != null && widget.searchField != '' ? ',{\"code\":{\"_icontains\":\"${widget.searchField}\"}}' : ' '}${_model.dateStart != '' ? ',{\"date_created\":{\"_gte\":\"${dateTimeFormat('yyyy-MM-dd', functions.stringToDateTime(_model.dateStart))}\"}}' : ' '}${_model.dateEnd != '' ? ',{\"date_created\":{\"_lte\":\"${dateTimeFormat('yyyy-MM-dd', functions.stringToDateTime(_model.dateEnd))}\"}}' : ' '}${_model.searchProviderTextController.text != '' ? ',{\"provider_id\":{\"name\":{\"_icontains\":\"${_model.searchProviderTextController.text}\"}}}' : '  '}]}]}',
+                              filter: '{\"_and\":[{\"_and\":[{\"agent_id\":{\"_eq\":\"${FFAppState().user.agentId.id}\"}}${widget.searchField != null && widget.searchField != '' ? ',{\"code\":{\"_icontains\":\"${widget.searchField}\"}}' : ' '}${_model.dateStart != '' ? ',{\"date_created\":{\"_gte\":\"${dateTimeFormat(
+                                  'yyyy-MM-dd',
+                                  functions.stringToDateTime(_model.dateStart),
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                )}\"}}' : ' '}${_model.dateEnd != '' ? ',{\"date_created\":{\"_lte\":\"${dateTimeFormat(
+                                  'yyyy-MM-dd',
+                                  functions.stringToDateTime(_model.dateEnd),
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                )}\"}}' : ' '}${_model.searchProviderTextController.text != '' ? ',{\"provider_id\":{\"name\":{\"_icontains\":\"${_model.searchProviderTextController.text}\"}}}' : '  '}]}]}',
                               accessToken: FFAppState().accessToken,
                               limit: 5000,
                             );

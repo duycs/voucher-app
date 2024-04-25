@@ -181,7 +181,11 @@ class _FilterTimeDashBoardWidgetState extends State<FilterTimeDashBoardWidget> {
                             size: 30.0,
                           ),
                           Text(
-                            dateTimeFormat('d/M/y', _model.datePicked1),
+                            dateTimeFormat(
+                              'd/M/y',
+                              _model.datePicked1,
+                              locale: FFLocalizations.of(context).languageCode,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -259,7 +263,11 @@ class _FilterTimeDashBoardWidgetState extends State<FilterTimeDashBoardWidget> {
                             size: 30.0,
                           ),
                           Text(
-                            dateTimeFormat('d/M/y', _model.datePicked2),
+                            dateTimeFormat(
+                              'd/M/y',
+                              _model.datePicked2,
+                              locale: FFLocalizations.of(context).languageCode,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

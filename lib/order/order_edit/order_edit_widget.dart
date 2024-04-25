@@ -561,9 +561,12 @@ class _OrderEditWidgetState extends State<OrderEditWidget> {
                                         ),
                                         Text(
                                           dateTimeFormat(
-                                              'dd-MM-yyyy',
-                                              functions.stringToDateTime(_model
-                                                  .orderDetail?.dateCreated)),
+                                            'dd-MM-yyyy',
+                                            functions.stringToDateTime(_model
+                                                .orderDetail?.dateCreated),
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          ),
                                           textAlign: TextAlign.end,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

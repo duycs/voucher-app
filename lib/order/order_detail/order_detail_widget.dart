@@ -448,7 +448,11 @@ class _OrderDetailWidgetState extends State<OrderDetailWidget> {
                                                   'dd-MM-yyyy',
                                                   functions.stringToDateTime(
                                                       _model.orderDetail
-                                                          ?.dateCreated))
+                                                          ?.dateCreated),
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                )
                                               : ' ',
                                           textAlign: TextAlign.end,
                                           style: FlutterFlowTheme.of(context)

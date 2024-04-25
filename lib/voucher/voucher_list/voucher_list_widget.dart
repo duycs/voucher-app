@@ -233,9 +233,17 @@ class _VoucherListWidgetState extends State<VoucherListWidget> {
                                         statusVoucher) async {
                                       setState(() {
                                         _model.dataStartList = dateTimeFormat(
-                                            'yyyy-MM-dd', dateStart);
+                                          'yyyy-MM-dd',
+                                          dateStart,
+                                          locale: FFLocalizations.of(context)
+                                              .languageCode,
+                                        );
                                         _model.dataEndList = dateTimeFormat(
-                                            'yyyy-MM-dd', dateEnd);
+                                          'yyyy-MM-dd',
+                                          dateEnd,
+                                          locale: FFLocalizations.of(context)
+                                              .languageCode,
+                                        );
                                         _model.statusList = statusVoucher!;
                                         _model.priceMinList = priceMin;
                                         _model.priceMaxList = priceMax;
@@ -507,13 +515,16 @@ class _VoucherListWidgetState extends State<VoucherListWidget> {
                                                 ),
                                                 Text(
                                                   dateTimeFormat(
-                                                      'yyyy-MM-dd',
-                                                      functions
-                                                          .stringToDateTime(
-                                                              getJsonField(
-                                                        dataListItem,
-                                                        r'''$.voucher_template_id.date_end''',
-                                                      ).toString())),
+                                                    'yyyy-MM-dd',
+                                                    functions.stringToDateTime(
+                                                        getJsonField(
+                                                      dataListItem,
+                                                      r'''$.voucher_template_id.date_end''',
+                                                    ).toString()),
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

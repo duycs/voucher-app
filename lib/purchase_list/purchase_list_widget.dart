@@ -440,9 +440,13 @@ class _PurchaseListWidgetState extends State<PurchaseListWidget> {
                                           ),
                                           Text(
                                             dateTimeFormat(
-                                                'dd-MM-yyyy',
-                                                functions.stringToDateTime(
-                                                    dataListItem.dateCreated)),
+                                              'dd-MM-yyyy',
+                                              functions.stringToDateTime(
+                                                  dataListItem.dateCreated),
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
