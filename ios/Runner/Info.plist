@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -18,35 +16,39 @@
 	<string>pVoucher</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>pvoucher.com</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>pvoucher</string>
-			</array>
-		</dict>
-	</array>
+	<array>        <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>pvoucher.com</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+        <string>pvoucher</string>
+        </array>
+        </dict>
+    </array>
+    <key>FlutterDeepLinkingEnabled</key>
+    <true/>
+
+
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
-	<key>FlutterDeepLinkingEnabled</key>
-	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+
 	<key>NSCameraUsageDescription</key>
-	<string>In order to scan for barcodes and QR codes, this app requires permission to access the camera.</string>
+    <string>In order to scan for barcodes and QR codes, this app requires permission to access the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>In order to upload data, this app requires permission to access the photo library.</string>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
+    <string>In order to upload data, this app requires permission to access the photo library.</string>
+
+
+
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -66,5 +68,6 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
 </dict>
 </plist>
