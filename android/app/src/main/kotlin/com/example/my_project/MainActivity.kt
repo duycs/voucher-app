@@ -1,4 +1,4 @@
-package com.pexnic.evouchermobile
+package com.pexnic.voucher
 
 import io.flutter.embedding.android.FlutterActivity
 

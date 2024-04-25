@@ -250,10 +250,18 @@ class _FilterVoucherListWidgetState extends State<FilterVoucherListWidget> {
                             ),
                             Text(
                               dateTimeFormat(
-                                              'yyyy-MM-dd', _model.dateStart) !=
+                                            'yyyy-MM-dd',
+                                            _model.dateStart,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          ) !=
                                           ''
                                   ? dateTimeFormat(
-                                      'yyyy-MM-dd', _model.dateStart)
+                                      'yyyy-MM-dd',
+                                      _model.dateStart,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    )
                                   : ((widget.dateStart != '') &&
                                           (widget.dateStart != '0')
                                       ? widget.dateStart
@@ -336,9 +344,18 @@ class _FilterVoucherListWidgetState extends State<FilterVoucherListWidget> {
                             ),
                             Text(
                               dateTimeFormat(
-                                              'yyyy-MM-dd', _model.dateEnd) !=
+                                            'yyyy-MM-dd',
+                                            _model.dateEnd,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          ) !=
                                           ''
-                                  ? dateTimeFormat('yyyy-MM-dd', _model.dateEnd)
+                                  ? dateTimeFormat(
+                                      'yyyy-MM-dd',
+                                      _model.dateEnd,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    )
                                   : 'Đến ngày',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium

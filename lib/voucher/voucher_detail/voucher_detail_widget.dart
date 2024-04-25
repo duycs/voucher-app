@@ -472,12 +472,14 @@ class _VoucherDetailWidgetState extends State<VoucherDetailWidget> {
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Text(
                                       dateTimeFormat(
-                                          'd/M/y',
-                                          functions
-                                              .stringToDateTime(getJsonField(
-                                            widget.itemList,
-                                            r'''$.voucher_template_id.date_end''',
-                                          ).toString())),
+                                        'd/M/y',
+                                        functions.stringToDateTime(getJsonField(
+                                          widget.itemList,
+                                          r'''$.voucher_template_id.date_end''',
+                                        ).toString()),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      ),
                                       textAlign: TextAlign.start,
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)

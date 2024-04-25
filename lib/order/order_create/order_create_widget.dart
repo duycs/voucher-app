@@ -32,12 +32,16 @@ class _OrderCreateWidgetState extends State<OrderCreateWidget> {
     _model.noteTextController ??= TextEditingController();
     _model.noteFocusNode ??= FocusNode();
 
-    _model.discountMoneyTextController ??= TextEditingController(text: '0');
+    _model.discountMoneyTextController ??= TextEditingController();
     _model.discountMoneyFocusNode ??= FocusNode();
 
-    _model.discountMoneyPercentTextController ??=
-        TextEditingController(text: '0');
+    _model.discountMoneyPercentTextController ??= TextEditingController();
     _model.discountMoneyPercentFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+          _model.discountMoneyTextController?.text = '0';
+          _model.discountMoneyPercentTextController?.text = '0';
+        }));
   }
 
   @override

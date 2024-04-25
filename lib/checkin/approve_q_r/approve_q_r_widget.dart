@@ -462,11 +462,12 @@ class _ApproveQRWidgetState extends State<ApproveQRWidget> {
                                       8.0, 8.0, 8.0, 8.0),
                                   child: Text(
                                     dateTimeFormat(
-                                        'dd/MM/yyyy',
-                                        functions.stringToDateTime(_model
-                                            .voucher
-                                            ?.voucherTemplateId
-                                            .dateEnd)),
+                                      'dd/MM/yyyy',
+                                      functions.stringToDateTime(_model
+                                          .voucher?.voucherTemplateId.dateEnd),
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     textAlign: TextAlign.start,
                                     maxLines: 2,
                                     style: FlutterFlowTheme.of(context)

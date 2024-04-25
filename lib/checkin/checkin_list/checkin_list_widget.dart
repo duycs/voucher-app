@@ -238,10 +238,14 @@ class _CheckinListWidgetState extends State<CheckinListWidget> {
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
                                                   dateTimeFormat(
-                                                      'dd/MM/yyyy HH:mm',
-                                                      functions.stringToDateTime(
-                                                          voucherListItem
-                                                              .dateCheckin)),
+                                                    'dd/MM/yyyy HH:mm',
+                                                    functions.stringToDateTime(
+                                                        voucherListItem
+                                                            .dateCheckin),
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium

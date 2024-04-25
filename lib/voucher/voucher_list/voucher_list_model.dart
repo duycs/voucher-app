@@ -57,8 +57,16 @@ class VoucherListModel extends FlutterFlowModel<VoucherListWidget> {
       accessToken: FFAppState().accessToken,
       filter: functions.customFilterVoucher(
           nameVoucherTextController.text,
-          dateTimeFormat('yyyy-MM-dd', dateStart),
-          dateTimeFormat('yyyy-MM-dd', dateEnd),
+          dateTimeFormat(
+            'yyyy-MM-dd',
+            dateStart,
+            locale: FFLocalizations.of(context).languageCode,
+          ),
+          dateTimeFormat(
+            'yyyy-MM-dd',
+            dateEnd,
+            locale: FFLocalizations.of(context).languageCode,
+          ),
           priceMin,
           priceMax,
           codeVoucher,

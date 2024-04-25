@@ -227,11 +227,17 @@ class _FilterOrderListWidgetState extends State<FilterOrderListWidget> {
                                     ? dateTimeFormat(
                                         'dd/MM/yyyy',
                                         functions.stringToDateTime(
-                                            widget.dateStartReturn))
+                                            widget.dateStartReturn),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      )
                                     : dateTimeFormat(
                                         'dd/MM/yyyy',
-                                        functions.stringToDateTime(
-                                            _model.dateStart)),
+                                        functions
+                                            .stringToDateTime(_model.dateStart),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      ),
                                 'Khoảng thời gian',
                               ),
                               textAlign: TextAlign.center,
@@ -318,11 +324,17 @@ class _FilterOrderListWidgetState extends State<FilterOrderListWidget> {
                                     ? dateTimeFormat(
                                         'dd/MM/yyyy',
                                         functions.stringToDateTime(
-                                            widget.dateEndReturn))
+                                            widget.dateEndReturn),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      )
                                     : dateTimeFormat(
                                         'dd/MM/yyyy',
                                         functions
-                                            .stringToDateTime(_model.dateEnd)),
+                                            .stringToDateTime(_model.dateEnd),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      ),
                                 'Khoảng thời gian',
                               ),
                               textAlign: TextAlign.center,

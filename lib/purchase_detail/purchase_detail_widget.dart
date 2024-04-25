@@ -275,12 +275,14 @@ class _PurchaseDetailWidgetState extends State<PurchaseDetailWidget> {
                                     ),
                                     Text(
                                       dateTimeFormat(
-                                          'dd-MM-yyyy',
-                                          functions
-                                              .stringToDateTime(getJsonField(
-                                            widget.item,
-                                            r'''$.date_created''',
-                                          ).toString())),
+                                        'dd-MM-yyyy',
+                                        functions.stringToDateTime(getJsonField(
+                                          widget.item,
+                                          r'''$.date_created''',
+                                        ).toString()),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

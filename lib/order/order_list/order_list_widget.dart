@@ -644,10 +644,13 @@ class _OrderListWidgetState extends State<OrderListWidget> {
                                           Expanded(
                                             child: Text(
                                               dateTimeFormat(
-                                                  'dd-MM-yyyy',
-                                                  functions.stringToDateTime(
-                                                      dataListItem
-                                                          .dateCreated)),
+                                                'dd-MM-yyyy',
+                                                functions.stringToDateTime(
+                                                    dataListItem.dateCreated),
+                                                locale: FFLocalizations.of(
+                                                        context)
+                                                    .languageCode,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
